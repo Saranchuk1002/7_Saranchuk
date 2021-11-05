@@ -1,0 +1,20 @@
+{% from "/macros/link.twig" import link as link %}
+{% from "/macros/btn.twig" import btn as btn %}
+{% extends "__layout.twig" %}
+
+ {% block content %}
+  
+    
+  <ul class="list-group" style="margin-top: 25px; margin-left:305px">
+      {% for item in menu %}
+        {% if loop.index0 != 0 %}
+            <li class="list-group-item">
+                {{ btn(item.title, item.url, true) }}
+                {{ btn("Картинка", item.url~"/image", false) }}
+                {{ btn("Описание", item.url~"/info", false) }}
+            </li>
+        {% endif %}
+      {% endfor %}
+    </ul> 
+
+{% endblock %}
